@@ -27,9 +27,7 @@ while guess != num_to_guess:
         print("Túl magas!")
     elif guess < num_to_guess:
         print("Túl alacsony!")
-    else:
-        print("Eltaláltad! :)")
-        break
+    print("Eltaláltad! :)")
 print("A tippek száma: ",nr_of_guesses)
 if nr_of_guesses > 7:
     print("Legközelebb gondold át a stratégiádat, megy ez jobban is!")
@@ -63,9 +61,8 @@ for i in range(1, len(movies)):
         oldest = i
 print("3.3: Legkorábbi film: ", movies[oldest].title)
 
-searched_genre = input("3.3: Írja be a keresett műfaj nevét:  ").lower()
+searched_genre = input("3.3: Írja be a keresett műfaj nevét:  ")
 print(f"A(z) {searched_genre} műfajmegjelölésű filmek címei:")
 for movie in movies:
-    for genres in movie.genre:
-        if searched_genre in genres.lower():
-            print("\t -", movie.title)
+    if searched_genre in movie.genre:
+        print("\t -", movie.title)
